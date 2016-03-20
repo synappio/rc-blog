@@ -16,6 +16,7 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/reconfirm.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -23,7 +24,9 @@
 </head>
 <body class="{{body_class}} nav-closed">
 
-    {{navigation}}
+    <header id="global-header" class="global-header navbar">
+        {{navigation}}
+    </header>
 
     <div class="site-wrapper">
 
