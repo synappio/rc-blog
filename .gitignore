@@ -1,0 +1,4 @@
+node_modules/
+
+# Dev database
+content/data/ghost-dev.db
