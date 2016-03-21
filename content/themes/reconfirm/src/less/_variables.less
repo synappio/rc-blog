@@ -1,0 +1,159 @@
+// Brand colors
+// -------------------------
+@main-color-1:                     #56B5B7;
+@main-color-2:                     #134D5B;
+@extended-color-1:                 #2C313A;
+@extended-color-2:                 #485057;
+@extended-color-3:                 #AAABB5;
+@extended-color-4:                 #F9F9F9;
+@extended-color-5:                 #CA005A;
+@extended-color-6:                 #85003B;
+@extended-color-7:                 #85C486;
+@extended-color-8:                 #4899D0;
+@extended-color-9:                 #F2A440;
+@extended-color-10:                #E1E4E7;
+
+@btn-default-color:              @main-color-1;
+@btn-default-bg:                 #FFFFFF;
+@btn-default-border:             @gray-light;
+@btn-light-gray:                 #F1F1F1;
+
+// Grays
+// -------------------------
+
+@gray-darker:            #031d22; // Charcoal
+@gray-dark:              #253235; // Petrol
+@gray-mid-dark:          #373737;
+@gray:                   #3b474a; // Ash
+@gray-mid:               #7c8486; // Middle Grey
+@gray-light:             #e0e0e0; // Dark Grey
+@gray-lighter:           #f5f5f5; // Light grey
+@gray-pale:              #fbfbfb;
+@gray-lightest:          #fdfdfd;
+
+@header-gray-1:          @extended-color-2;
+@header-gray-2:          @extended-color-3;
+
+// Blues
+// -------------------------
+@blue-lighter:           #bce8f1;
+@blue-light:             #d9edf7;
+@blue-darker:            #286090;
+
+
+// Typography
+// -------------------------
+
+@font-family-primary:        "Open Sans", sans-serif;
+
+@font-size-base:          12px;
+@font-size-large:         ceil(@font-size-base * 1.25); // ~18px
+@font-size-small:         ceil(@font-size-base * 0.85); // ~12px
+
+@line-height-base:        1.428571429; // 20/14
+@line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
+
+@opensans-font-path: '/pub/fonts/OpenSans';
+@font-face {
+  font-family: 'Open Sans';
+  src:
+    url('@{opensans-font-path}/OpenSans-Regular.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-Light.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-Bold.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-BoldItalic.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-ExtraBold.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-ExtraBoldItalic.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-LightItalic.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-SemiBold.ttf') format('truetype'),
+    url('@{opensans-font-path}/OpenSans-SemiBoldItalic.ttf') format('truetype'),
+}
+
+@font-family-secondary:    'museo-sans', sans-serif;
+
+// Components
+// -------------------------
+// Based on 14px font-size and 1.428 line-height (~20px to start)
+
+@padding-base-vertical:          6px;
+@padding-base-horizontal:        12px;
+
+@padding-large-vertical:         10px;
+@padding-large-horizontal:       16px;
+
+@padding-small-vertical:         5px;
+@padding-small-horizontal:       10px;
+
+@line-height-large:              1.33;
+@line-height-small:              1.5;
+
+@border-radius-base:             6px;
+@border-radius-large:            6px;
+@border-radius-small:            3px;
+
+// @component-active-bg:            @brand-primary;
+
+@caret-width-base:               4px;
+@caret-width-large:              5px;
+
+// Tables
+// -------------------------
+@table-row-height:                   50px;
+@table-headings-font-size:           12px;
+@table-border-radius:                6px;
+@table-column-height:                50px;
+
+// Inputs
+// -------------------------
+@height-input-large:                 50px;
+@line-height-input-large:            50px;
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+@screen-xsmall:              480px;
+@screen-phone:               @screen-xsmall;
+
+// Small screen / tablet
+@screen-small:               768px;
+@screen-tablet:              @screen-small;
+
+// Medium screen / desktop
+@screen-medium:              992px;
+@screen-desktop:             @screen-medium;
+
+// Large screen / wide desktop
+@screen-large:               1200px;
+@screen-large-desktop:       @screen-large;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-phone-max:           (@screen-small - 1);
+@screen-small-max:           (@screen-medium - 1);
+@screen-tablet-max:          (@screen-desktop - 1);
+@screen-desktop-max:         (@screen-large-desktop - 1);
+
+
+
+// Navbar
+// -------------------------
+
+// Basics of a navbar
+@navbar-height:                    65px;
+@navbar-margin-bottom:             @line-height-computed;
+@navbar-color:                     #fff;
+@navbar-border:                    transparent; //darken(@navbar-bg, 5%);
+@navbar-border-radius:             @border-radius-base;
+@navbar-padding-horizontal:        floor(@grid-gutter-width / 2);
+@navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
+
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+@container-tablet:          720px;
+
+// Medium screen / desktop
+@container-desktop:         940px;
+
+// Large screen / wide desktop
+@container-large-desktop:   1140px;
