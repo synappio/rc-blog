@@ -77,12 +77,6 @@ More general [install docs](http://support.ghost.org/installation/) here in case
 
 # Deploying Ghost
 
-![Ghost(Pro) + DigitalOcean](https://cloud.githubusercontent.com/assets/120485/8180331/d6674e32-1414-11e5-8ce4-2250e9994906.png)
-
-Save yourself time and headaches with our fully managed **[Ghost(Pro)](https://ghost.org/pricing/)** service. Deploy a new instance of Ghost in a couple of clicks running on [DigitalOcean](https://digitalocean.com)’s rock solid infrastructure, with a worldwide CDN thrown in at no extra charge.
-
-All revenue from **Ghost(Pro)** goes to the Ghost Foundation, the non-profit org which funds the maintenance and further development of Ghost.
-
 [Other options](http://support.ghost.org/deploying-ghost/) are also available if you prefer playing around with servers by yourself.
 
 
