@@ -78,4 +78,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['watch']);
+
+    // build task
+    grunt.registerTask('build', ['less', 'cssmin', 'uglify'])
 };

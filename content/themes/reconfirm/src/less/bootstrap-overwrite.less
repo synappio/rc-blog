@@ -1,0 +1,44 @@
+@import "_variables.less";
+
+.navbar{
+  margin: 0px;
+  z-index: 10;
+  height: @navbar-height;
+  .navbar-nav > li > a{
+    padding: 0;
+    line-height: @navbar-height;
+    font-size: 13px;
+    &:hover, &:focus{
+      background-color: transparent;
+      color: @gray-darker;
+    }
+  }
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+  background-color: transparent;
+}
+
+select.input-lg{
+  height: @height-input-large;
+  line-height: @line-height-input-large;
+  font-size: 15px;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+}
+.input-lg{
+  height: @height-input-large;
+  line-height: @line-height-input-large;
+  font-size: 15px;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.alert-info{
+  border: none;
+  border-radius: @border-radius-base;
+}
