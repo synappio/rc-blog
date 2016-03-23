@@ -156,6 +156,33 @@
     line-height: 40px;
   }
 }
+/* Every post, on every page, gets this style on its <article> tag */
+.posts-container .post {
+  position: relative;
+  min-height: 1px;
+  max-width: 710px;
+  margin: 20px auto;
+  padding: 20px;
+  word-wrap: break-word;
+  display: inline-block;
+  background-color: #fff;
+}
+.posts-container .post .post-title {
+  height: 40px;
+  font-size: 24px;
+  margin: 10px 0 20px 0;
+}
+.posts-container .post .post-title a {
+  color: #000;
+  text-decoration: none;
+}
+.posts-container .post-excerpt p {
+  font-size: 13px;
+  line-height: 18px;
+  color: #373737;
+  height: 155px;
+  text-align: justify;
+}
 /* ==========================================================================
    Table of Contents
    ========================================================================== */
@@ -707,7 +734,7 @@ margin on the iframe, cause it breaks stuff. */
   position: relative;
   z-index: 10;
   min-height: 100%;
-  background: #fff;
+  background: #f3f3f3;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
 }
@@ -957,45 +984,13 @@ body.nav-opened .site-wrapper {
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
-/* Every post, on every page, gets this style on its <article> tag */
-.post {
-  position: relative;
-  width: 80%;
-  max-width: 710px;
-  margin: 4rem auto;
-  padding-bottom: 4rem;
-  border-bottom: #EBF2F6 1px solid;
-  word-wrap: break-word;
-}
-/* Add a little circle in the middle of the border-bottom on our .post
-   just for the lolz and stylepoints. */
-.post:after {
-  display: block;
-  content: "";
-  width: 7px;
-  height: 7px;
-  border: #E7EEF2 1px solid;
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  margin-left: -5px;
-  background: #FFF;
-  border-radius: 100%;
-  box-shadow: #FFF 0 0 0 5px;
-}
-body:not(.post-template) .post-title {
-  font-size: 3.6rem;
-}
-.post-title a {
-  text-decoration: none;
-}
-.post-excerpt p {
-  margin: 0;
-  font-size: 0.9em;
-  line-height: 1.7em;
-}
 .read-more {
   text-decoration: none;
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
 }
 .post-meta {
   display: block;
@@ -1025,13 +1020,12 @@ body:not(.post-template) .post-title {
   min-height: 77px;
 }
 .post-date {
-  display: inline-block;
-  margin-left: 8px;
-  padding-left: 12px;
-  border-left: #d5dbde 1px solid;
-  text-transform: uppercase;
-  font-size: 1.3rem;
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
   white-space: nowrap;
+  color: #aaabb5;
+  padding-top: 30px;
 }
 .user-image {
   position: absolute;
