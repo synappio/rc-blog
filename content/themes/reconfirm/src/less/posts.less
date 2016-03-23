@@ -1,7 +1,7 @@
 
 /* Every post, on every page, gets this style on its <article> tag */
 .posts-container{
-  .post {
+  .post{
       position: relative;
       background-color: #fff;
       min-height: 1px;
@@ -11,22 +11,50 @@
       word-wrap: break-word;
       display: inline-block;
       background-color: #fff;
-      .post-title {
-          height: 40px;
-          font-size: 24px;
-          margin: 10px 0 20px 0;
-          a{
-            color: #000;
-            text-decoration: none;
+      .post-header{
+        .post-tag{
+          text-transform: uppercase;
+        }
+        .post-title{
+            height: 70px;
+            font-size: 22px;
+            margin: 10px 0 20px 0;
+            a{
+              font-weight: bold;
+              color: #000;
+              text-decoration: none;
+            }
           }
+      }
+      &.tag-tips-and-tricks{
+        .post-tag{
+        //   a:before{
+        //      font-family: FontAwesome;
+        //      content: "\f004";
+        // }
+      }
+      &.tag-tutorials{
+        .post-tag{
+          // a:before {
+          //    font-family: FontAwesome;
+          //    content: "\f004";
+          // }
+        }
+      }
+      &.tag-case-study{
+        .post-tag{
+        //   a:before {
+        //      font-family: FontAwesome;
+        //      content: "\f004";
+        // }
       }
   }
 
   .post-excerpt p {
-      font-size: 13px;
-      line-height: 18px;
+      font-size: 12px;
+      line-height: 16px;
       color: @gray-mid-dark;
-      height: 155px;
+      height: 110px;
       text-align: justify;
   }
 }
