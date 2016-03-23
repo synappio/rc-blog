@@ -7,47 +7,83 @@
       min-height: 1px;
       max-width: 710px;
       margin: 20px auto;
-      padding: 20px;
+      padding: 25px;
       word-wrap: break-word;
       display: inline-block;
       background-color: #fff;
       .post-header{
         .post-tag{
+          position: absolute;
+          z-index: 130;
+          border-radius: 15px;
+          padding: 0 15px;
           text-transform: uppercase;
-        }
-        .post-title{
-            height: 70px;
-            font-size: 22px;
-            margin: 10px 0 20px 0;
+          color: #FFF;
+          font-size: 10px;
+          font-weight: bold;
+          background-color: gray;
+          .tag-bubble{
+            padding-left: 5px;
             a{
-              font-weight: bold;
-              color: #000;
-              text-decoration: none;
+              color: #fff;
             }
           }
+        }
+        .post-date {
+          display: block;
+          font-size: 10px;
+          font-weight: 600;
+          color: #aaabb5;
+          padding-top: 50px;
+        }
+        .post-title{
+          height: 70px;
+          font-size: 22px;
+          margin: 0 0 20px 0;
+          a{
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+          }
+        }
       }
       &.tag-tips-and-tricks{
         .post-tag{
-        //   a:before{
-        //      font-family: FontAwesome;
-        //      content: "\f004";
+          background-color: @extended-color-5;
+          &:before{
+            font-family: FontAwesome;
+            content: "\f0eb";
+            font-size: 14px;
+          }
         }
       }
       &.tag-tutorials{
         .post-tag{
-          // a:before {
-          //    font-family: FontAwesome;
-          //    content: "\f004";
+          background-color: @extended-color-8;
+          &:before{
+            font-family: FontAwesome;
+            content: "\f004";
+            font-size: 14px;
           }
         }
-      
+      }
       &.tag-case-study{
         .post-tag{
-        //   a:before {
-        //      font-family: FontAwesome;
-        //      content: "\f004";
-        }
-      }
+          background-color: @extended-color-9;
+          &:before{
+            font-family: FontAwesome;
+            content: "\f02d";
+            font-size: 14px;
+          }
+       }
+    }
+  }
+
+  .header-line{
+    top: 62px;
+    border: 1px solid @extended-color-10;
+    position: relative;
+    z-index: 10;
   }
 
   .post-excerpt p {
