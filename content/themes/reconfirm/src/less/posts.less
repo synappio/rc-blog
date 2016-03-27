@@ -4,6 +4,7 @@
 // Post preview
 .posts-container{
   .post{
+    height: 370px;
     position: relative;
     background-color: #fff;
     min-height: 1px;
@@ -39,14 +40,17 @@
     position: relative;
     z-index: 10;
   }
-  .post-excerpt p {
-      font-size: 12px;
-      line-height: 16px;
-      color: @gray-mid-dark;
-      height: 145px;
+  .post-excerpt{
+    height: 12.3rem;
+    p{
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      color: @gray-mid;
+      font-weight: bold;
       text-align: justify;
       overflow: hidden;
       margin: 0;
+    }
   }
 }
 
@@ -109,5 +113,47 @@
     &:before{
       content: "\f02d";
     }
+  }
+}
+.tag-downloadables{
+  .post-tag{
+    background-color: @extended-color-7;
+    &:before{
+      content: "\f0eb";
+    }
+  }
+}
+
+.go-back{
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  a{
+    color: #FFF;
+    &:hover{
+      color: #FFF;
+    }
+    i{
+      font-size: 2rem;
+      font-weight: 700;
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+.file-download{
+  position: absolute;
+  bottom: 2.5rem;
+  .download-button{
+    border: 0;
+    border-radius: 5px;
+    background-color: @extended-color-10;
+    color: @extended-color-7;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }

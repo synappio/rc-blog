@@ -1,5 +1,5 @@
 /**
- * Main JS file for Casper behaviours
+ * Main JS file for Reconfirm.it behaviours
  */
 
 /* globals jQuery, document */
@@ -18,6 +18,10 @@
         $(".menu-button, .nav-cover, .nav-close").on("click", function(e){
             e.preventDefault();
             $("body").toggleClass("nav-opened nav-closed");
+        });
+
+        $(".go-back").click(function(){
+          window.history.back();
         });
 
     });
