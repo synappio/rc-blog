@@ -44,7 +44,15 @@
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery_fitvids.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery_ghosthunter.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.min.js"}}"></script>
+    <script>
+        $("#search-field").ghostHunter({
+            rss : "{{@blog.url}}/rss/",
+            results : "#results",
+            onKeyUp : true,        
+        });
+    </script>
   </body>
 </html>

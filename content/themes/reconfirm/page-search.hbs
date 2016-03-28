@@ -1,0 +1,20 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<main class="content" role="main">
+    <article class="{{post_class}}">
+    Search results
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+        </header>
+
+        <form>
+          <input id="search-field" placeholder="Type to search" />
+        </form>
+
+        <section id="results">   
+        </section>
+
+    </article>
+</main>
