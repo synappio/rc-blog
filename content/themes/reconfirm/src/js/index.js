@@ -15,11 +15,6 @@
 
         $(".scroll-down").arctic_scroll();
 
-        // $(".menu-button, .nav-cover, .nav-close").on("click", function(e){
-        //     e.preventDefault();
-        //     $("body").toggleClass("nav-opened nav-closed");
-        // });
-
         $(".go-back").click(function(){
           window.history.back();
         });
@@ -32,9 +27,40 @@
             }
         });
 
+        var articleTemplate = '<div class="col-sm-6 col-md-offset-0 col-md-4 padding-10"> <article class="post">\
+            <header class="post-header">\
+                <h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>\
+            </header>\
+            <section class="post-excerpt">\
+                <p>{{description}} <a class="read-more" href="{{link}}">&raquo;</a></p>\
+            </section>\
+            <footer class="post-meta">\
+                <time class="post-date">{{pubDate}}</time>\
+            </footer>\
+        </article></div>';
+
+        var noResultsHTML = '<div class=""> <article class="post no-results">\
+            No results found </article></div>';
+
+        $("#search-field").ghostHunter({
+            rss : "/rss/",
+            results : "#results",
+            onKeyUp : true,
+            displaySearchInfo: false,
+            result_template : articleTemplate,
+            onComplete : function( results ){
+                // if there are no results, append a message to the results container
+                if( results.length == 0 ){
+                    $('#results').html(noResultsHTML);
+                }
+
+            }
+        });   
+
         // Write search term to search form, it will trigger automatically
         $('#search-field').val(sessionStorage.getItem("searchVal"));
         sessionStorage.removeItem("searchVal"); //clear storage after use
+
     });
 
     // Arctic Scroll by Paul Adam Davis
