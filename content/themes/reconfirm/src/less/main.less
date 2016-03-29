@@ -1265,15 +1265,6 @@ body.nav-opened .site-wrapper {
     box-sizing: border-box;
 }
 
-/* Correctly position site-footer when next to the .read-next container */
-.read-next + .site-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-}
-
 /* ==========================================================================
    8. Third Party Elements - Embeds from other services
    ========================================================================== */
@@ -1386,39 +1377,47 @@ body.nav-opened .site-wrapper {
    10. Footer - The bottom of every page
    ========================================================================== */
 
-.site-footer {
-    position: relative;
-    margin: 8rem 0 0 0;
-    padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.75em;
-    color: #BBC7CC;
-}
-
-.site-footer a {
-    color: #BBC7CC;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.site-footer a:hover {
-    border-bottom: #bbc7cc 1px solid;
-}
-
-.poweredby {
-    display: block;
-    width: 45%;
-    float: right;
-    text-align: right;
-}
-
-.copyright {
-    display: block;
-    width: 45%;
-    float: left;
-}
-
+   .site-footer{
+     line-height: 90px;
+     font-size: 13px;
+     color: @gray-mid;
+     background-color: @extended-color-4;
+     .content{
+       height: inherit;
+       .social{
+         text-align: left;
+         a{
+           color: @gray-mid;
+           &:hover{
+             color: @gray;
+             background-color: transparent;
+           }
+           i{
+             margin-right: 20px;
+             font-size: 1.5em;
+           }
+         }
+       }
+       .copy{
+         text-align: right;
+         span{
+           margin-right: 20px;
+         }
+         a{
+           color: @gray-mid;
+           text-decoration: none;
+           &:hover{
+             color: @gray;
+           }
+         }
+       }
+       @media (max-width:@screen-small){
+         .social, .copy{
+           text-align: center;
+         }
+       }
+     }
+   }
 
 /* ==========================================================================
    11. Media Queries - Smaller than 900px
