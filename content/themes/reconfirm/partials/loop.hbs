@@ -4,13 +4,12 @@
 </div>
 
 <div class="row no-margin">
-  <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8 posts-container">
+  <div class="col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-8 posts-container">
     {{! This is the post loop - each post will be output using this markup }}
 
     {{#foreach posts}}
       {{#has tag="downloadables"}}
-        <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-4 padding-10">
-          <div class="header-line"></div>
+        <div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">
           <article class="{{post_class}}">
             <header class="post-header">
               <div class="post-tag">
@@ -21,15 +20,14 @@
             </header>
             <section class="post-excerpt">
               <p>{{excerpt words="10"}}</p>
-              <div class="file-download">
+              <div class="col-xs-12 file-download">
                 <button class="download-button"><i class="fa fa-download padding-right-10"></i>Download now</button>
               </div>
             </section>
           </article>
         </div>
       {{else}}
-        <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-4 padding-10">
-          <div class="header-line"></div>
+        <div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">
           <article class="{{post_class}}">
             <header class="post-header">
               <div class="post-tag">
@@ -40,7 +38,7 @@
             </header>
             <section class="post-excerpt">
               <p>{{excerpt words="45"}}</p>
-              <a class="read-more" href="{{url}}">...</a>
+              <a class="col-xs-12 read-more" href="{{url}}">...</a>
             </section>
           </article>
         </div>
