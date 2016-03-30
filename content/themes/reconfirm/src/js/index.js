@@ -39,8 +39,8 @@
             </footer>\
         </article></div>';
 
-        var noResultsHTML = '<div class=""> <article class="post no-results">\
-            No results found </article></div>';
+        var noResultsHTML = '<div class="no-results"> \
+            No results found</div>';
 
         $("#search-field").ghostHunter({
             rss : "/rss/",

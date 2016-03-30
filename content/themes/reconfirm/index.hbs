@@ -3,10 +3,13 @@
 
  {{! Search section and tag list }}
 <div class="search-container">
-  <form id="nav-search-form" action="{{@blog.url}}/search" method="get" >
-    <span class="search-header"> What are you looking for?</span>
-    <input type="text" class="homepage-search-input" placeholder="Keyword Search">
-  </form>
+    <form id="nav-search-form" action="{{@blog.url}}/search" method="get" >
+        <span class="search-header"> What are you looking for?</span>
+        <div class="form-group has-feedback">
+            <input type="text" class="homepage-search-input input-light" placeholder="Keyword search">
+            <i class="glyphicon glyphicon-search form-control-feedback"></i>
+        </div>
+    </form>
 </div>
 
 {{! The main content area on the homepage }}
