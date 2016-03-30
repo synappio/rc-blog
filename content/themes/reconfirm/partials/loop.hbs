@@ -4,45 +4,69 @@
 </div>
 
 <div class="row no-margin">
-  <div class="col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-8 posts-container">
+  <div class="col-xs-offset-1 col-xs-5 col-lg-offset-2 col-lg-8 posts-container">
     {{! This is the post loop - each post will be output using this markup }}
 
+    {{#get "posts" limit="1" filter="featured:true" as |featured|}}
+      {{#foreach featured}}
+        <div class="col-sm-12 col-md-8 padding-10">
+          <article class="{{post_class}}" style="background-image: url({{image}});">
+            <div class="left-content">
+              <header class="post-header">
+                <div class="post-tag">
+                  <span class="tag-bubble">{{tags}}</span>
+                </div>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time>
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+              </header>
+              <section class="post-excerpt">
+                <p>{{excerpt words="45"}}</p>
+                <a class="col-xs-12 read-more" href="{{url}}">...</a>
+              </section>
+            </div>
+          </article>
+        </div>
+      {{/foreach}}
+    {{/get}}
+
     {{#foreach posts}}
-      {{#has tag="downloadables"}}
-        <div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">
-          <article class="{{post_class}}">
-            <header class="post-header">
-              <div class="post-tag">
-                <span class="tag-bubble">{{tags}}</span>
-              </div>
-              <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time>
-              <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            </header>
-            <section class="post-excerpt">
-              <p>{{excerpt words="10"}}</p>
-              <div class="col-xs-12 file-download">
-                <button class="download-button"><i class="fa fa-download padding-right-10"></i>Download now</button>
-              </div>
-            </section>
-          </article>
-        </div>
-      {{else}}
-        <div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">
-          <article class="{{post_class}}">
-            <header class="post-header">
-              <div class="post-tag">
-                <span class="tag-bubble">{{tags}}</span>
-              </div>
-              <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time>
-              <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            </header>
-            <section class="post-excerpt">
-              <p>{{excerpt words="45"}}</p>
-              <a class="col-xs-12 read-more" href="{{url}}">...</a>
-            </section>
-          </article>
-        </div>
-      {{/has}}
+      {{^if featured}}
+        {{#has tag="downloadables"}}
+          <div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">
+            <article class="{{post_class}}">
+              <header class="post-header">
+                <div class="post-tag">
+                  <span class="tag-bubble">{{tags}}</span>
+                </div>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time>
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+              </header>
+              <section class="post-excerpt">
+                <p>{{excerpt words="10"}}</p>
+                <div class="col-xs-12 file-download">
+                  <button class="download-button"><i class="fa fa-download padding-right-10"></i>Download now</button>
+                </div>
+              </section>
+            </article>
+          </div>
+        {{else}}
+          <div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">
+            <article class="{{post_class}}">
+              <header class="post-header">
+                <div class="post-tag">
+                  <span class="tag-bubble">{{tags}}</span>
+                </div>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time>
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+              </header>
+              <section class="post-excerpt">
+                <p>{{excerpt words="45"}}</p>
+                <a class="col-xs-12 read-more" href="{{url}}">...</a>
+              </section>
+            </article>
+          </div>
+        {{/has}}
+      {{/if}}
     {{/foreach}}
   </div>
 </div>
