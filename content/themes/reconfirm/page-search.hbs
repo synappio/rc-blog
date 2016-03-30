@@ -1,20 +1,20 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-<main class="content" role="main">
-    <article class="{{post_class}}">
-    Search results
+ {{! Search section and tag list }}
+<div class="search-container">
+    <form >
+        <span class="search-header"> What are you looking for?</span>
+        <input type="text" class="homepage-search-input" id="search-field" placeholder="Type to search">
+    </form>
+</div>
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
 
-        <form>
-          <input id="search-field" placeholder="Type to search" />
-        </form>
-
-        <section id="results">   
-        </section>
-
-    </article>
+{{! The main content area on the homepage }}
+<main id="content" class="content search-page" role="main">
+    <div class="row no-margin">
+	    <div id="results" class="posts-container col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+		</div>
+	</div>
 </main>
+

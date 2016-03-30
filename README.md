@@ -52,9 +52,12 @@ grunt init
 We have a custom theme!
 Go to content/themes/reconfirm and do a 
 
+
 ```bash
 grunt build
 ```
+
+We also have search! But for the search to work, you need to add a post with the name `search` and make it a static page ( using the ghost editor)
 
 Minify that shit for production?
 
