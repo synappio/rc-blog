@@ -7,7 +7,6 @@
   <div class="col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-8 posts-container">
     {{! This is the post loop - each post will be output using this markup }}
 
-
     {{! If this is a tag page, don't show featured first, just simple loop(which includes any featured articles that are tagged here) }}
     {{#is "tag"}}
       {{#foreach posts}}
@@ -36,7 +35,7 @@
           </article>
         </div>
       {{/foreach}}
-      
+
     {{else}}
       {{#get "posts" limit="1" filter="featured:true" as |featured|}}
         {{#foreach featured}}
@@ -89,7 +88,6 @@
         {{/if}}
       {{/foreach}}
     {{/is}}
-
   </div>
 </div>
 
