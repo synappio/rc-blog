@@ -37,7 +37,7 @@
       {{/foreach}}
 
     {{else}}
-      {{#get "posts" limit="1" filter="featured:true" as |featured|}}
+      {{#get "posts" limit="1" filter="featured:true" include="tags" as |featured|}}
         {{#foreach featured}}
           <div class="col-sm-12 col-md-8 padding-10">
             <article class="{{post_class}}" style="background-image: url({{image}});">
