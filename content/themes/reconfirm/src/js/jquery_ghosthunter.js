@@ -11,17 +11,17 @@
 
 	//This is the main plugin definition
 	$.fn.ghostHunter 	= function( options ) {
-	 
+
 	 	//Here we use jQuery's extend to set default values if they weren't set by the user
 	    var opts 		= $.extend( {}, $.fn.ghostHunter.defaults, options );
-	    if( opts.results ) 
+	    if( opts.results )
     	{
     		pluginMethods.init( this , opts );
     		return pluginMethods;
     	}
 
 	};
-	 
+
 	$.fn.ghostHunter.defaults = {
 		results 			: false,
 		rss 				: "/rss",
@@ -82,40 +82,46 @@
 		},
 
 		loadRSS			: function(){
-			
+
 			if(this.isInit) return false;
 
-		/*	Here we load an rss feed, parse it and load it into the index. 
-			This function will not call on load to avoid unnecessary heavy 
+		/*	Here we load an rss feed, parse it and load it into the index.
+			This function will not call on load to avoid unnecessary heavy
 			operations on a page if a visitor never ends up searching anything. */
-			
+
 			var index 		= this.index,
 				rssURL 		= this.rss,
 				blogData 	= this.blogData;
 
-			$.get(rssURL,function( data ){
+				$.get(rssURL,function( data ){
 
-		    	var posts = $(data).find('item');
+					var posts = $(data).find('item');
 
-		    	for (var i = 0; posts && i < posts.length; i++) {
-			        var post  		= posts.eq(i);
-			        var parsedData 	= {
-						id: i+1,
-						title 		: post.find('title').text(),
-						description	: post.find('description').text(),
-						category 	: post.find('category').text(),
-						pubDate 	: post.find('pubDate').text(),
-						link 		: post.find('link').text()
+					for (var i = 0; posts && i < posts.length; i++) {
+						var post = posts.eq(i);
+
+						// create post_class similarly to what's in the loop
+						post_class = post.find('category').text();
+						post_class = post_class.replace(/\s+/g, '-');
+
+						var parsedData = {
+							id: i+1,
+							title: post.find('title').text(),
+							description: post.find('description').text(),
+							category: post.find('category').text(),
+							pubDate: post.find('pubDate').text(),
+							link: post.find('link').text(),
+							post_class: 'tag-' + post_class
+						};
+
+						index.add(parsedData);
+						blogData.push(parsedData);
 					};
 
-				    index.add(parsedData);
-				    blogData.push(parsedData);
-			    };
-				$('#search-field').keyup();
-			});
+					$('#search-field').keyup();
+				});
 
 			this.isInit = true;
-
 		},
 
 		find 		 	: function( value ){

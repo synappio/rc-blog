@@ -27,20 +27,19 @@
             }
         });
 
-        var articleTemplate = '<div class="col-sm-6 col-md-offset-0 col-md-4 padding-10"> <article class="post">\
-            <header class="post-header">\
-                <h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>\
-            </header>\
-            <section class="post-excerpt">\
-                <p>{{description}} <a class="read-more" href="{{link}}">&raquo;</a></p>\
-            </section>\
-            <footer class="post-meta">\
-                <time class="post-date">{{pubDate}}</time>\
-            </footer>\
-        </article></div>';
+        var articleTemplate = '<div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">' +
+        '<article class="post {{post_class}}">' +
+            '<header class="post-header">' +
+              '<div class="post-tag"><span class="tag-bubble">{{category}}</span></div>' +
+              '<time class="post-date">{{pubDate}}</time>' +
+              '<h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>' +
+            '</header>' +
+            '<section class="post-excerpt">' +
+                '<p>{{description}} <a class="read-more" href="{{link}}">...</a></p>' +
+            '</section>' +
+        '</article></div>';
 
-        var noResultsHTML = '<div class="no-results"> \
-            No results found</div>';
+        var noResultsHTML = '<div class="no-results"> No results found</div>';
 
         $("#search-field").ghostHunter({
             rss : "/rss/",
@@ -55,7 +54,7 @@
                 }
 
             }
-        });   
+        });
 
         // Write search term to search form, it will trigger automatically
         $('#search-field').val(sessionStorage.getItem("searchVal"));
