@@ -100,18 +100,19 @@
 					for (var i = 0; posts && i < posts.length; i++) {
 						var post = posts.eq(i);
 
-						// create post_class similarly to what's in the loop
-						post_class = post.find('category').text();
-						post_class = post_class.replace(/\s+/g, '-');
+						// Create post class and tag similarly to what's in loop.hbs
+						// There should be only 1 tag. Keep the first otherwise
+						var category = post.find('category')[0].textContent;
+						var tagHyphened = category.replace(/\s+/g, '-');
 
 						var parsedData = {
 							id: i+1,
 							title: post.find('title').text(),
 							description: post.find('description').text(),
-							category: post.find('category').text(),
 							pubDate: post.find('pubDate').text(),
 							link: post.find('link').text(),
-							post_class: 'tag-' + post_class
+							category: category,
+							tagHyphened: tagHyphened,
 						};
 
 						index.add(parsedData);

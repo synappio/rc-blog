@@ -28,15 +28,13 @@
         });
 
         var articleTemplate = '<div class="col-sm-6 col-md-offset-0 col-md-4 padding-10">' +
-        '<article class="post {{post_class}}">' +
+        '<article class="post tag-{{tagHyphened}}">' +
             '<header class="post-header">' +
-              '<div class="post-tag"><span class="tag-bubble">{{category}}</span></div>' +
+              '<div class="post-tag"><span class="tag-bubble"><a href="/tag/{{tagHyphened}}">{{category}}</a></span></div>' +
               '<time class="post-date">{{pubDate}}</time>' +
               '<h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>' +
             '</header>' +
-            '<section class="post-excerpt">' +
-                '<p>{{description}} <a class="read-more" href="{{link}}">...</a></p>' +
-            '</section>' +
+            '<section class="post-excerpt">{{description}}<a class="read-more" href="{{link}}">...</a></section>' +
         '</article></div>';
 
         var noResultsHTML = '<div class="no-results"> No results found</div>';
@@ -52,7 +50,6 @@
                 if( results.length == 0 ){
                     $('#results').html(noResultsHTML);
                 }
-
             }
         });
 
@@ -91,6 +88,5 @@
                 $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top) }, allOptions.speed);
             }
         });
-
     };
 })(jQuery);
