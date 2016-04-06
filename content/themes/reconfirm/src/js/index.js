@@ -19,6 +19,7 @@
           window.history.back();
         });
 
+
         // Save search term
         $(".homepage-search-input").keydown(function(e) {
             if(e.which == 13) {
@@ -56,7 +57,6 @@
         // Write search term to search form, it will trigger automatically
         $('#search-field').val(sessionStorage.getItem("searchVal"));
         sessionStorage.removeItem("searchVal"); //clear storage after use
-
     });
 
     // Arctic Scroll by Paul Adam Davis
