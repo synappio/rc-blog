@@ -19,6 +19,28 @@
           window.history.back();
         });
 
+        $('.download-button').click(function(e){
+          var fileUrl = $(e.currentTarget).attr('data-download-url');
+          if ($('.btn-file-send').length) {
+            $('.btn-file-send').attr('data-download-url', fileUrl);
+          }
+        });
+
+        $('#file-download-form').submit(function(e){
+          e.preventDefault();
+          var email = $('#email').val();
+
+          if (email){
+            if (validateEmail(email)) {
+              console.log("email valid");
+              // track email
+              // download file
+            }
+          } else {
+            $('#email').addClass('has-error');
+            return;
+          }
+        });
 
         // Save search term
         $(".homepage-search-input").keydown(function(e) {
@@ -48,7 +70,7 @@
             result_template : articleTemplate,
             onComplete : function( results ){
                 // if there are no results, append a message to the results container
-                if( results.length == 0 ){
+                if( results.length === 0 ){
                     $('#results').html(noResultsHTML);
                 }
             }
@@ -90,3 +112,8 @@
         });
     };
 })(jQuery);
+
+function validateEmail(email) {
+   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   return re.test(email);
+}

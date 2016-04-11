@@ -4,26 +4,23 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
       </div>
-      <div class="modal-body">
-        <div class="form-wrap">
-          <div class="title">Almost there!</div>
-          <div class="modal-paragraph-faded">We will send the file to your inbox for downloading.</div>
-          <form id="file-download-form">
-            <div class="row row-eq-height">
-              <div class="col-sm-8 form-group input-holder">
-                <div class="full-width">
-                  <input type="email" class="form-control" placeholder="Enter your email here">
-                  <div class="input-error"></div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <a href="#" class="btn btn-primary btn-lg btn-file-send">
-                  Download the file <i class="fa fa-chevron-circle-right"></i>
-                </a>
+      <div class="modal-body download-modal-body">
+        <h1 class="title">Almost there!</h1>
+        <div class="info">Fill-in your email in order to start the download.</div>
+        <form id="file-download-form">
+          <div class="row">
+            <div class="col-sm-offset-1 col-sm-5 form-group email-holder">
+              <div>
+                <input type="email" name="email" id="email" class="form-control input-lg email-input" placeholder="Enter your email">
               </div>
             </div>
-          </form>
-        </div>
+            <div class="col-sm-5">
+              <button type="submit" class="download-button btn-file-send">
+                <i class="fa fa-download padding-right-10"></i> Download the file
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
