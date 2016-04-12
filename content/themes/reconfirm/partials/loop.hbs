@@ -20,19 +20,10 @@
               <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time>
               <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
             </header>
-            {{#has tag="downloadables"}}
-              <section class="post-excerpt">
-                <p>{{excerpt words="10"}}</p>
-                <div class="col-xs-12 file-download">
-                  <button class="download-button"><i class="fa fa-download padding-right-10"></i>Download now</button>
-                </div>
-              </section>
-            {{else}}
-              <section class="post-excerpt">
-                <p>{{excerpt words="45"}}</p>
-                <a class="col-xs-12 read-more" href="{{url}}">...</a>
-              </section>
-            {{/has}}
+            <section class="post-excerpt">
+              <p>{{excerpt words="55"}}</p>
+              <a class="col-xs-12 read-more" href="{{url}}">...</a>
+            </section>
           </article>
         </div>
       {{/foreach}}
@@ -51,7 +42,7 @@
                   <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
                 </header>
                 <section class="post-excerpt">
-                  <p>{{excerpt words="45"}}</p>
+                  <p>{{excerpt words="55"}}</p>
                   <a class="col-xs-12 read-more" href="{{url}}">...</a>
                 </section>
               </div>
@@ -71,19 +62,10 @@
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time>
                 <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
               </header>
-              {{#has tag="downloadables"}}
-                <section class="post-excerpt">
-                  <p>{{excerpt words="10"}}</p>
-                  <div class="col-xs-12 file-download">
-                    <button class="download-button"><i class="fa fa-download padding-right-10"></i>Download now</button>
-                  </div>
-                </section>
-              {{else}}
-                <section class="post-excerpt">
-                  <p>{{excerpt words="45"}}</p>
-                  <a class="col-xs-12 read-more" href="{{url}}">...</a>
-                </section>
-              {{/has}}
+              <section class="post-excerpt">
+                <p>{{excerpt words="45"}}</p>
+                <a class="col-xs-12 read-more" href="{{url}}">...</a>
+              </section>
             </article>
           </div>
         {{/if}}

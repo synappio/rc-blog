@@ -59,7 +59,7 @@ grunt build
 
 We also have search! But for the search to work, you need to add a post with the name `search` and make it a static page ( using the ghost editor)
 
-For adding downloadable files to a post, insert this code in the editor, and change the `URL_TO_FILE` parameter to the file location.
+For adding downloadable files to a post, insert the following code in the editor, and change the `URL_TO_FILE` parameter to the file location.
 ```bash
 <button class="download-button" data-toggle="modal" data-target="#download-modal" data-download-url="URL_TO_FILE"><i class="fa fa-download"></i>Download now</button>
 ## e.g. for URL_TO_FILE: http://cdn.datavalidation.com/DV_casestudy_Funky-Christmas-Sweaters.pdf
