@@ -30,16 +30,19 @@
           e.preventDefault();
           var email = $('#email').val();
 
-          if (email){
-            if (validateEmail(email)) {
-              console.log("email valid");
-              // track email
-              // download file
-            }
-          } else {
+          if (!$('#email').val()){
             $('#email').addClass('has-error');
             return;
           }
+
+          if (validateEmail(email)) {
+              // track user
+              analytics.track('rc.content-download', {
+                'Email': email
+              });
+
+              // download file
+            }
         });
 
         // Save search term
