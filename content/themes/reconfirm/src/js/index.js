@@ -21,13 +21,12 @@
 
         $('.download-button').click(function(e){
           var fileUrl = $(e.currentTarget).attr('data-download-url');
-          if ($('.btn-file-send').length) {
-            $('.btn-file-send').attr('data-download-url', fileUrl);
+          if ($('.file-send-link').length) {
+            $('.file-send-link').attr('data-download-url', fileUrl);
           }
         });
 
-        $('#file-download-form').submit(function(e){
-          e.preventDefault();
+        $('#file-download-form').click('.file-send-link', function(e){
           var email = $('#email').val();
 
           if (!$('#email').val()){
@@ -36,13 +35,14 @@
           }
 
           if (validateEmail(email)) {
-              // track user
-              analytics.track('rc.content-download', {
-                'Email': email
-              });
+            // track user
+            analytics.track('rc.content-download', {
+              'Email': email
+            });
 
-              // download file
-            }
+            // download the file
+            $('.file-send-link').attr('href', $('.file-send-link').attr('data-download-url'));
+          }
         });
 
         // Save search term

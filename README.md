@@ -8,7 +8,7 @@ Make sure you've installed Node.js - We recommend the latest **Node v0.10.x** re
 1. `npm install --production`
 1. Go to `content/themes/reconfirm` and do a `grunt build`
 1. Start Ghost! (from ghost root folder)
-    - Local environment: `npm start` 
+    - Local environment: `npm start`
     - On a server: `npm start --production`
 1. `http://localhost:2368/ghost` :tada:
 
@@ -50,7 +50,7 @@ grunt init
 ```
 
 We have a custom theme!
-Go to content/themes/reconfirm and do a 
+Go to content/themes/reconfirm and do a
 
 
 ```bash
@@ -58,6 +58,12 @@ grunt build
 ```
 
 We also have search! But for the search to work, you need to add a post with the name `search` and make it a static page ( using the ghost editor)
+
+For adding downloadable files to a post, insert this code in the editor, and change the `URL_TO_FILE` parameter to the file location.
+```bash
+<button class="download-button" data-toggle="modal" data-target="#download-modal" data-download-url="URL_TO_FILE"><i class="fa fa-download"></i>Download now</button>
+## e.g. for URL_TO_FILE: http://cdn.datavalidation.com/DV_casestudy_Funky-Christmas-Sweaters.pdf
+```
 
 Minify that shit for production?
 
