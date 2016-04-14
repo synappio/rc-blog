@@ -71,7 +71,7 @@ In order to have smaller images, we have these classes: `height-500`, `height-40
 <div class="height-500">
   ![planuri](/content/images/2016/04/some_image.png)
 </div>
-```bash
+```
 
 
 Minify that shit for production?
