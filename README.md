@@ -65,6 +65,15 @@ For adding downloadable files to a post, insert the following code in the editor
 ## e.g. for URL_TO_FILE: http://cdn.datavalidation.com/DV_casestudy_Funky-Christmas-Sweaters.pdf
 ```
 
+By default, images inserted into a post are full width.
+In order to have smaller images, we have these classes: `height-500`, `height-400` `height-300`, which can be used like this:
+```bash
+<div class="height-500">
+  ![planuri](/content/images/2016/04/some_image.png)
+</div>
+```bash
+
+
 Minify that shit for production?
 
 ```bash
